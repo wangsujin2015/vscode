@@ -5,7 +5,6 @@ import { InputBoxOptions, OpenDialogOptions, Uri, window } from "vscode";
 import { existsSync, lstatSync, writeFile } from "fs";
 import {
   controllerTemplate,
-  indexTemplate,
   viewTemplate,
 } from "../templates/getx-getbuilder-page.template";
 
@@ -69,13 +68,14 @@ function createDirectory(targetDirectory: string): Promise<void> {
 }
 
 async function generateCode(pageName: string, targetDirectory: string) {
+  
   const pageDirectoryPath = `${targetDirectory}/${pageName}`;
   if (!existsSync(pageDirectoryPath)) {
     await createDirectory(pageDirectoryPath);
-    await createDirectory(`${pageDirectoryPath}/widgets`);
+    
 
     await Promise.all([
-      indexTemplate(pageName, targetDirectory),
+
       controllerTemplate(pageName, targetDirectory),
       viewTemplate(pageName, targetDirectory),
     ]);

@@ -4,13 +4,9 @@ import mkdirp from "mkdirp";
 import { InputBoxOptions, OpenDialogOptions, Uri, window } from "vscode";
 import { existsSync, lstatSync, writeFile } from "fs";
 import {
-  bindingsTemplate,
   controllerTemplate,
-  indexTemplate,
   stateTemplate,
   viewTemplate,
-  widgetsHelloTemplate,
-  widgetsTemplate,
 } from "../templates/getx-page.template";
 
 export const newGetxPage = async (uri: Uri) => {
@@ -76,16 +72,11 @@ async function generateCode(pageName: string, targetDirectory: string) {
   const pageDirectoryPath = `${targetDirectory}/${pageName}`;
   if (!existsSync(pageDirectoryPath)) {
     await createDirectory(pageDirectoryPath);
-    await createDirectory(`${pageDirectoryPath}/widgets`);
 
     await Promise.all([
-      indexTemplate(pageName, targetDirectory),
       stateTemplate(pageName, targetDirectory),
       controllerTemplate(pageName, targetDirectory),
-      bindingsTemplate(pageName, targetDirectory),
       viewTemplate(pageName, targetDirectory),
-      widgetsTemplate(pageName, targetDirectory),
-      widgetsHelloTemplate(pageName, targetDirectory),
     ]);
   }
 }

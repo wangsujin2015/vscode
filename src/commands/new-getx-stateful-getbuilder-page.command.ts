@@ -72,10 +72,9 @@ async function generateCode(pageName: string, targetDirectory: string) {
   const pageDirectoryPath = `${targetDirectory}/${pageName}`;
   if (!existsSync(pageDirectoryPath)) {
     await createDirectory(pageDirectoryPath);
-    await createDirectory(`${pageDirectoryPath}/widgets`);
-
+   
     await Promise.all([
-      indexTemplate(pageName, targetDirectory),
+     
       controllerTemplate(pageName, targetDirectory),
       viewTemplate(pageName, targetDirectory),
     ]);

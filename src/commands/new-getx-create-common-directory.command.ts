@@ -4,9 +4,6 @@ import mkdirp from "mkdirp";
 import { InputBoxOptions, OpenDialogOptions, Uri, window } from "vscode";
 import { existsSync, lstatSync, mkdirSync, writeFile } from "fs";
 import {
-  indexTemplate,
-  index2Template,
-  commonIndexTemplate,
   commonRouterNames,
   commonRouterPages,
   commonValuesConstants,
@@ -73,8 +70,6 @@ async function generateCode(pageName: string, targetDirectory: string) {
   if (!existsSync(pageDirectoryPath)) {
     // pages
     createDirectory(`${targetDirectory}/pages`);
-    indexTemplate("pages", targetDirectory);
-
     // common
     createDirectory(pageDirectoryPath);
     createDirectory(`${pageDirectoryPath}/i18n`);
@@ -93,44 +88,11 @@ async function generateCode(pageName: string, targetDirectory: string) {
     commonRouterNames(pageDirectoryPath);
     // 路由命名
     commonRouterPages(pageDirectoryPath);
-
     // 常量
     commonValuesConstants(pageDirectoryPath);
     commonValuesImages(pageDirectoryPath);
     commonValuesSvgs(pageDirectoryPath);
-
-    // 目录索引 index.dart 文件
-    indexTemplate("i18n", pageDirectoryPath);
-    indexTemplate("api", pageDirectoryPath);
-    indexTemplate("models", pageDirectoryPath);
-    // indexTemplate("routers", pageDirectoryPath);
-    indexTemplate("services", pageDirectoryPath);
-    indexTemplate("style", pageDirectoryPath);
-    indexTemplate("utils", pageDirectoryPath);
-    // indexTemplate("values", pageDirectoryPath);
-    indexTemplate("widgets", pageDirectoryPath);
-    indexTemplate("components", pageDirectoryPath);
-    indexTemplate("extension", pageDirectoryPath);
-    commonIndexTemplate(pageDirectoryPath);
-
-    index2Template(
-      "routers",
-      `
-export 'names.dart';
-export 'pages.dart';
-    `,
-      pageDirectoryPath
-    );
-
-    index2Template(
-      "values",
-      `
-export 'constants.dart';
-export 'images.dart';
-export 'svgs.dart';
-    `,
-      pageDirectoryPath
-    );
+   
 
     // end
   }

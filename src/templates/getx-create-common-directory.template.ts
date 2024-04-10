@@ -10,53 +10,9 @@ import {
 
 const fsOptions: WriteFileOptions = { encoding: "utf-8" };
 
-// index
-export function indexTemplate(pageName: string, targetDirectory: string) {
-  const pascalCaseName = changeCase.pascalCase(pageName.toLowerCase());
-  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase());
-  const targetPath = `${targetDirectory}/${pageName}/index.dart`;
-  const template = `library ${snakeCaseName};
 
-// export './xxxx.dart';
-`;
 
-  writeFileSync(targetPath, template, fsOptions);
-}
-export function index2Template(
-  pageName: string,
-  content: string,
-  targetDirectory: string
-) {
-  const pascalCaseName = changeCase.pascalCase(pageName.toLowerCase());
-  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase());
-  const targetPath = `${targetDirectory}/${pageName}/index.dart`;
-  const template = `library ${snakeCaseName};
-${content}
-`;
 
-  writeFileSync(targetPath, template, fsOptions);
-}
-
-// common index
-export function commonIndexTemplate(targetDirectory: string) {
-  const targetPath = `${targetDirectory}/index.dart`;
-  const template = `library common;
-
-export 'api/index.dart';
-export 'components/index.dart';
-export 'extension/index.dart';
-export 'i18n/index.dart';
-export 'models/index.dart';
-export 'routers/index.dart';
-export 'services/index.dart';
-export 'style/index.dart';
-export 'utils/index.dart';
-export 'values/index.dart';
-export 'widgets/index.dart';
-`;
-
-  writeFileSync(targetPath, template, fsOptions);
-}
 
 // router names
 export function commonRouterNames(targetDirectory: string) {

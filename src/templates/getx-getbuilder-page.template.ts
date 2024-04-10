@@ -1,43 +1,19 @@
 import * as changeCase from "change-case";
 import { existsSync, lstatSync, writeFile } from "fs";
 
-// index
-export function indexTemplate(pageName: string, targetDirectory: string) {
-  const pascalCaseName = changeCase.pascalCase(pageName.toLowerCase());
-  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase());
-  const targetPath = `${targetDirectory}/${pageName}/index.dart`;
-  const template = `library ${snakeCaseName};
 
-export './controller.dart';
-export './view.dart';
-`;
 
-  return new Promise(async (resolve, reject) => {
-    writeFile(targetPath, template, "utf8", (error) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-      resolve;
-    });
-  });
-}
 
 // controller
 export function controllerTemplate(pageName: string, targetDirectory: string) {
   const pascalCaseName = changeCase.pascalCase(pageName.toLowerCase());
-  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase());
-  const targetPath = `${targetDirectory}/${pageName}/controller.dart`;
+  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase()).toLowerCase();
+  const targetPath = `${targetDirectory}/${pageName}/${snakeCaseName}_controller.dart`;
   const template = `import 'package:get/get.dart';
 
 class ${pascalCaseName}Controller extends GetxController {
   ${pascalCaseName}Controller();
 
-  _initData() {
-    update(["${snakeCaseName}"]);
-  }
-
-  void onTap() {}
 
   // @override
   // void onInit() {
@@ -47,7 +23,7 @@ class ${pascalCaseName}Controller extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    _initData();
+   
   }
 
   // @override
@@ -71,12 +47,12 @@ class ${pascalCaseName}Controller extends GetxController {
 // view
 export function viewTemplate(pageName: string, targetDirectory: string) {
   const pascalCaseName = changeCase.pascalCase(pageName.toLowerCase());
-  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase());
-  const targetPath = `${targetDirectory}/${pageName}/view.dart`;
+  const snakeCaseName = changeCase.snakeCase(pageName.toLowerCase()).toLowerCase();
+  const targetPath = `${targetDirectory}/${pageName}/${snakeCaseName}_view.dart`;
   const template = `import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'index.dart';
+import '${pascalCaseName}_controller.dart';
 
 class ${pascalCaseName}Page extends GetView<${pascalCaseName}Controller> {
   const ${pascalCaseName}Page({Key? key}) : super(key: key);
@@ -92,7 +68,6 @@ class ${pascalCaseName}Page extends GetView<${pascalCaseName}Controller> {
   Widget build(BuildContext context) {
     return GetBuilder<${pascalCaseName}Controller>(
       init: ${pascalCaseName}Controller(),
-      id: "${snakeCaseName}",
       builder: (_) {
         return Scaffold(
           appBar: AppBar(title: const Text("${snakeCaseName}")),
