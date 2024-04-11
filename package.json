@@ -1,6 +1,6 @@
 {
   "name": "getx-helper",
-  "displayName": "Flutter GetX Helper - longma",
+  "displayName": "Flutter GetX Helper - Alpha Wang",
   "description": "It supports the getx library and provides effective creation of business modules for Flutter applications.",
   "version": "1.0.0",
   "engines": {
@@ -27,7 +27,7 @@
     "email": "598837443@qq.com"
   },
   "README": "README.md",
-  "publisher": "longma",
+  "publisher": "Alpha Wang",
   "icon": "logo.png",
   "activationEvents": [
     "workspaceContains:**/pubspec.yaml"
