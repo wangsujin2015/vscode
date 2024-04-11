@@ -2,7 +2,7 @@
   "name": "getx-template",
   "displayName": "Flutter GetX Generator - LONGMA",
   "description": "It supports the getx library and provides effective creation of business modules for Flutter applications.",
-  "version": "1.2.33",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -54,11 +54,11 @@
       },
       {
         "command": "extension.new-getx-stateful-getbuilder-page",
-        "title": "Getx: StatefulWidget + GetBuilder Page"
+        "title": "🧑‍🎓Getx: StatefulWidget + GetBuilder Page"
       },
       {
         "command": "extension.new-getx-page",
-        "title": "Getx: Full Page"
+        "title": "🚀Getx: Full Page"
       }
     ],
     "menus": {

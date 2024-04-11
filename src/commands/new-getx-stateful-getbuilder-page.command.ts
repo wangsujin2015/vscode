@@ -5,7 +5,6 @@ import { InputBoxOptions, OpenDialogOptions, Uri, window } from "vscode";
 import { existsSync, lstatSync, writeFile } from "fs";
 import {
   controllerTemplate,
-  indexTemplate,
   viewTemplate,
 } from "../templates/getx-stateful-getbuilder-page.template";
 
