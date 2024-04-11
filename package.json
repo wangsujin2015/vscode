@@ -1,6 +1,6 @@
 {
-  "name": "getx-template",
-  "displayName": "Flutter GetX Generator - LONGMA",
+  "name": "getx-helper",
+  "displayName": "Flutter GetX Helper - longma",
   "description": "It supports the getx library and provides effective creation of business modules for Flutter applications.",
   "version": "1.0.0",
   "engines": {
@@ -20,14 +20,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ducafecat/getx-template-vscode-extension"
+    "url": "https://gitee.com/wsj2012/getx-vscode"
   },
   "bugs": {
-    "url": "https://github.com/ducafecat/getx-template-vscode-extension/issues",
-    "email": "ducafecat@gmail.com"
+    "url": "https://gitee.com/wsj2012/getx-vscode/issues",
+    "email": "598837443@qq.com"
   },
   "README": "README.md",
-  "publisher": "ducafecat",
+  "publisher": "longma",
   "icon": "logo.png",
   "activationEvents": [
     "workspaceContains:**/pubspec.yaml"
