@@ -1,34 +1,5 @@
 # GetX 项目代码生成工具
 
-<a href="https://ducafecat.com" target="_blank">
-  <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/ducafecat/video-ducafecat-banner.png" alt="猫哥视频站" >
-</a>
-
-© 猫哥
-
-- 微信 ducafecat
-
-- [ducafecat.com](https://ducafecat.com/)
-
-- [github](https://github.com/ducafecat)
-
-- [bilibili](https://space.bilibili.com/404904528)
-
----
-
-- 插件配套项目
-
-免费开源项目示例 [flutter_ducafecat_news_getx](https://github.com/ducafecat/flutter_ducafecat_news_getx) 配套使用。
-
-- 商业 APP 模版课程
-
-欢迎使用我们的商业模版项目，快速开发你的项目并上线。
-
-https://ducafecat.com/course/flutter-woo
-
-- 腾讯 tim 即时通讯项目课程
-
-https://ducafecat.com/course/flutter-tim
 
 ## 功能
 
@@ -549,18 +520,3 @@ end
 
 大家可以自己动手体验下~
 
----
-
-© 猫哥
-
-- 微信 ducafecat
-
-- [ducafecat.com](https://ducafecat.com/)
-
-- [github](https://github.com/ducafecat)
-
-- [bilibili](https://space.bilibili.com/404904528)
-
-<a href="https://ducafecat.com" target="_blank">
-  <img src="https://ducafecat.oss-cn-beijing.aliyuncs.com/ducafecat/video-ducafecat-banner.png" alt="猫哥视频站" >
-</a>
