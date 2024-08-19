@@ -9,6 +9,7 @@ import { newGetxCommonDirectory } from "./commands/new-getx-create-common-direct
 import { newGetxPage } from "./commands/new-getx-page.command";
 import { newGetxGetBuilderPage } from "./commands/new-getx-getbuilder-page.command";
 import { newGetxStatefulWidgetGetBuilderPage } from "./commands/new-getx-stateful-getbuilder-page.command";
+import { newGetxStatefulWidgetCustomPage } from "./commands/extension.new-getx-stateful-custom-page";
 
 // import { commands, ExtensionContext, languages, workspace } from "vscode";
 
@@ -51,6 +52,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(
       "extension.new-getx-stateful-getbuilder-page",
       newGetxStatefulWidgetGetBuilderPage
+    ),
+    vscode.commands.registerCommand(
+      "extension.new-getx-stateful-custom-page",
+      newGetxStatefulWidgetCustomPage
     )
   );
 }

@@ -2,7 +2,7 @@
   "name": "getx-wangmuran",
   "displayName": "Flutter GetX Helper - wangmuran",
   "description": "It supports the getx library and provides effective creation of business modules for Flutter applications.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -46,7 +46,7 @@
       },
       {
         "command": "extension.new-getx-create-directory",
-        "title": "Getx: Create Common Directory"
+        "title": "💻Getx: Create Common Directory"
       },
       {
         "command": "extension.new-getx-getbuilder-page",
@@ -59,7 +59,11 @@
       {
         "command": "extension.new-getx-page",
         "title": "🚀Getx: Full Page"
-      }
+      },
+      {
+        "command": "extension.new-getx-stateful-custom-page",
+        "title": "🦸Getx: Custom Page"
+      } 
     ],
     "menus": {
       "explorer/context": [
@@ -90,6 +94,11 @@
         },
         {
           "command": "extension.new-getx-page",
+          "group": "blocGroup@1",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.new-getx-stateful-custom-page",
           "group": "blocGroup@1",
           "when": "explorerResourceIsFolder"
         }
